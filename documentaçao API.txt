@@ -1,0 +1,29 @@
+comecar novo projeto
+group: com(nome)
+extensoes: spring web, devtools, data jpa, mysql driver
+apaga dentro de resource as duas pastas
+
+dentro da pasta com o nome do projeto cria um domain e dentro model
+dentro do model coloca a classe que vai com entity 
+
+
+properti:
+Timezone=UTC(ele se aloca para aonde o site esta sendo aberto)
+datasource.password= (se tiver senha da senha se nao deixa em branco)
+spring.jpa.hibernate.ddl-auto=create(toda vez que voce reexecutar o projeto ele apaga o antigo e cria o novo)
+
+os nomes podem ser diferentes dentro da class(nome da tabela e da classe pode ser diferente):
+@Table(name="tb_cozinha")
+public class Cozinha {
+
+@Column(name="nome_cozinha", length = 50)
+    private String nome;
+}
+
+parar nao ficar fazendo equals e hashcodes, getter e setter:
+baixar o lombok e utilizar 
+@Data (seliciona todos)
+@EqualsAndHashCode(onlExplicitlyIncluded = true)
+
+e em cima do id colocar ele como incluso:
+@EqualsAndHashCode.Include
