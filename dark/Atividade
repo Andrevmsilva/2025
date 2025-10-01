@@ -1,0 +1,75 @@
+abstract class Pessoa {
+  String _nome;
+  int _idade;
+
+
+Pessoa(this._nome, this._idade);
+String getNome(){
+  return _nome;
+}
+void setNome(String nome){
+  _nome = nome;
+}
+
+int getIdade(){
+  return _idade;
+}
+void setIdade(int idade){
+  _idade = idade;
+}
+
+void apresentar(){
+  print('Nome: $_nome, Idade: $_idade');
+}}
+
+class Aluno extends Pessoa{
+  String _matricula;
+
+  Aluno(String nome, int idade, this._matricula) : super(nome,idade);
+
+  String getMatricula(){
+    return _matricula;
+  }
+
+  void setMatricula(String matricula){
+    _matricula = matricula;
+  }
+
+  @override
+  void apresentar(){
+    print('Nome: $_nome, Idade: $_idade,Matricula: $_matricula');
+  }
+}
+
+class Professor extends Pessoa{
+  String _especialidade;
+
+  Professor(String nome, int idade, this._especialidade) :super(nome,idade);
+
+  String getEspecialidade(){
+    return _especialidade;
+  }
+
+  void setEspecialidade(String especialidade){
+    _especialidade = especialidade;
+  }
+
+  void apresentar(){
+     print('Nome: $_nome, Idade: $_idade,Especialidade: $_especialidade');
+  }
+}
+
+class Disciplina{
+  //String nome;
+  //String cargaHoraria;
+
+//fazer igual os de cima para poderem ser nulos
+}
+
+void main(){
+  Aluno aluno = Aluno('André', 18, 'matriculado');
+  aluno.apresentar();
+  print('----------------------------------------------------');
+  Professor professor = Professor('Luiz', 25, 'Pam');
+  professor.apresentar();
+}
